@@ -21,6 +21,7 @@ const io = new Server(server, {
       "http://localhost:5172",
       "http://localhost:5173",
       "http://localhost:5174",
+      "https://socialnet2.vercel.app",
     ], // Add your frontend URL(s)
     methods: ["GET", "POST"],
     credentials: true,
