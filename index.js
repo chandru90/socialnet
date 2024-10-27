@@ -35,7 +35,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(urlencoded({ extended: true }));
 
-// Updated CORS options
+// CORS options
 const corsOptions = {
   origin: ["http://localhost:5173", "https://socialnet2.vercel.app"],
   credentials: true,
@@ -43,6 +43,9 @@ const corsOptions = {
 
 // Apply CORS middleware
 app.use(cors(corsOptions));
+
+// Enable preflight for all routes
+app.options("*", cors(corsOptions));
 
 // API routes
 app.use("/api/v1/user", userRoute);
