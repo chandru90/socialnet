@@ -35,11 +35,7 @@ app.use(cookieParser());
 app.use(urlencoded({ extended: true }));
 
 const corsOptions = {
-  origin: [
-    "http://localhost:5172",
-    "http://localhost:5173",
-    "http://localhost:5174",
-  ], // Add your frontend URL(s)
+  origin: ["http://localhost:5173", "https://socialnet2.vercel.app"], // Add your frontend URL(s)
   credentials: true,
 };
 app.use(cors(corsOptions));
