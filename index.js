@@ -22,7 +22,7 @@ const io = new Server(server, {
       "http://localhost:5173",
       "http://localhost:5174",
       "https://socialnet2.vercel.app",
-    ], // Add your frontend URL(s)
+    ],
     methods: ["GET", "POST"],
     credentials: true,
   },
@@ -35,10 +35,13 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(urlencoded({ extended: true }));
 
+// Updated CORS options
 const corsOptions = {
-  origin: ["http://localhost:5173", "https://socialnet2.vercel.app"], // Add your frontend URL(s)
+  origin: ["http://localhost:5173", "https://socialnet2.vercel.app"],
   credentials: true,
 };
+
+// Apply CORS middleware
 app.use(cors(corsOptions));
 
 // API routes
